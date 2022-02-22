@@ -54,7 +54,54 @@ f"Hello {name}, how are you today?"
 
 Other (older) formattings: percent formatting, .format method.
 
+### Functions
 
+Functions in python are define with the keyword `def` plus the name of the functions (using snake case), brackets with the arguments it receives and finally colon. Unlike Java, JS and many other programming languages, python defines scopes with tabs. The body of a function need to be indented one level to the right:
+
+```
+def my_func(param):
+    return "hello there"
+```
+
+Arguments of a function can have a default value in case it it not mandatory:
+
+```
+def calc(x, y, operation="sum"):
+    return x + y
+```
+
+Arguments can be positional or keyword arguments. When calling a function a combination of both can be used however the positional ones must come first:
+
+```
+calc(1, operation = "sub", y = 2)
+```
+
+*Never use a list as a default value of a function's argument. Python only instantiates when it is creating the list. It causes that list to be reused across multiple calls incurring on unexpected results:
+
+```
+def add_to_list(a, my_list=[]):
+    my_list.append(a)
+
+add_to_list(1) // [1]
+add_to_list(3) // [1, 3] not [3]
+```
+
+Functions can access variables stored in the outer scopes however they cannot be changed.
+
+```
+x = 2
+
+def my_func():
+    print(x) // 2
+    x = 4
+    pront(x) // 4
+
+print(x) // 2
+```
+
+### Lists
+
+### Tuples
 
 ### Notes
 
