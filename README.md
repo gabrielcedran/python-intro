@@ -128,6 +128,37 @@ The main methods of list objects (and operations) are:
 
 ### Tuples
 
+Tuples are cointainers that can store different types of data (in theory that are somewhat related) in specific positions. Tuples are immutable.
+
+There are two methods to create tuples. 1. using the built in api method tuple 2. using brackets*** (there is a small caveat here). Examples:
+
+```
+http_response = tuple([200, "ok"])
+http_response = (200, "ok")
+
+my_tuple = tuple()
+my_typle = ()
+```
+
+the catch with the brackets assignment is that if there is only one element python will assume the type of that element to be the variable type, not a tuple:
+
+```
+my_tuple = tuple([1]) // ok
+my_tuple = (1) // my_tuple is now a integer
+
+To overcome this issue, it is necessary to add a trailing comma to inform python that it is a tuple (but it only applied to tuples with one element)
+my_tuple = (1,)
+```
+
+The main operations and methods on tuples are `count`, `index` and `len`.
+
+Tuples also support destructuring operation in a similar fashion to javascript. The only detail is that all the positions of a tuple must have a related variable on the left side of the assignment operator:
+
+```
+code, text, payload = tuple([200, "ok", "res body"]) 
+
+code, text = tuple([200, "ok", "res body"]) 
+```
 
 
 ### Notes
