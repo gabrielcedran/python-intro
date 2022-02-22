@@ -101,7 +101,34 @@ print(x) // 2
 
 ### Lists
 
+There are two methods to create lists. 1. using square brackets on the right side of the assignment operator 2. using the api method list.
+
+```
+my_list = [1, 2, 3]
+my_list = []
+my_list = list(1, 2, 3)
+my_list = list()
+```
+
+The main methods of list objects (and operations) are:
+
+1. `append` to add a new element at the end of the list (`my_list.append(value))
+2. `insert` add a new element at a specific position (`my_list.insert(index, value)) - it is not a replace
+3. `remove` an element at an specific position (`my_list.remove(index)`)
+4. `pop` the last element of the list (`my_list.pop()`) - can also be used with the index of the element that needs to be popped out (`my_list.pop(index)`)
+5. `index` to find the position of a given element (`my_list.index(element)`)
+6. `in` clause to verify if an element is part of a list (`element in my_list`) - it returns a boolean
+7. `count` to find the number of specific elements in a list (`my_list.count(element)`).
+8. `len` to get the list size
+9. `extend` to join two lists
+10. `sort` to sort a list in place (`my_list.sort()`) - it mutates the list 
+11. `sorted` to sort the list in a immutable way (`sorted(my_list)`) - a new list is returned and the original list is left intact
+12. `reverse` to descendingly sort a list  in place (`my_list.reverse()`) - it mutates the list
+13. `sorted(reverse=True)` to descendingly sort a list in a immutable way (`sorted(my_list, reverse=True)`)
+
 ### Tuples
+
+
 
 ### Notes
 
