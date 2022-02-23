@@ -279,6 +279,37 @@ True or False // returns true
 ```
 To reverse a boolean expression result, just use the `not` keyword.
 
+### Looping over lists
+
+The simplest way to loop over a list is to use the control flow FOR operation:
+```
+colours = ['Red', 'White', 'Black']
+for colour in colours:
+    print(colour) 
+```
+
+To iterate over a range, python has a built-in method that returns a range in an efficient way (when the elements are necessary):
+```
+for number in range(1, 10, 2): // the first parameter is the start number, the second the end number (non inclusive) and the third the step 
+    print(number) 
+```
+
+If you need to iterate over a list and also have the iteration index at the same time, python has a built-in convenience method named `enumerate()` that return a tuple - first the index, second the value.
+
+```
+colours = ['Red', 'White', 'Black']
+for i, colour in enumerate(colours):
+    print(f"Index {i} colour {colour}")
+```
+
+### Looping over dictionaries
+Looping over dictionaries is very similar to looping over lists. The only thing to be aware of is that if you iterate directly on the dictionary's variable, you will be iterating over the keys. To iterate over the values you would have to call the `value` method and over both at the same time `items`. 
+
+Unpacking (destructuring) works when iterating over items, as it return a list of tuples (key / value). Enumerating also works with dictionaries.
+
+
+
+
 ### Notes
 
 - The default repository for third party libs is PyPI (Package Index)
