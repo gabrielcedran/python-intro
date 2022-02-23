@@ -214,8 +214,70 @@ Main methods and operations on a dictionary:
 6. `keys` to get all the keys of a dictionary
 7. `values` to get all the values
 8. `items` to get the key value pair - as a tuple
-9. 
 
+### Booleans
+
+Python has two built-in boolean types: True and False. It also has a built-in method `bool(element)` that returns if a given value will be evaluated to true or false - truthiness. Examples: `bool("")` or `bool("a")`.
+
+Truthiness:
+
+- Numbers: only zero is evaluated to falsy. Everything else, including negative ones, are evaluated to truthy.
+- Strings: empty string is evaluated to falsy. Everything else to truthy.
+- Empty containers are evaluated to falsy. Populated containers to truthy.
+- None type is evaluated to falsy
+
+Comparisons:
+
+When comparing strings, it is important to remeber that python compares them lexicographically (it means by underlying ascii of the charactes).
+It is important to keep in mind that capital letters come before lower case ones. When two strings are compared, each character is compared one by one until a difference is found.
+
+```
+"T" < "t" // true
+"t" < "T" // false
+"a" < "b" // true
+"TT" == "Tt" // false
+"TT" != "Tt" // true
+```
+
+Containers are compared also using equals and not equals notation:
+
+```
+[0, 1, 2] == [1, 2, 3] // false
+[0, 1, 2] != [1, 2, 3] // false
+```
+
+To check if two objects are stored in the same memory location, it is necessary to use the keyword `is`.
+`Equality vs Identity`.
+
+```
+a = [1, 2, 3]
+b = [1, 2, 3]
+
+a is b // false
+
+// the opposite is `is not`.
+a is not b // true
+```
+
+We have to be careful when using AND and OR operators on boolean expressions using truthiness.
+
+```
+False and True // returns false
+True and True // returns true
+
+[1] and [2] // returns [2]
+[1] and {} // returns {}
+[] and {1, 2} // returns []
+
+// however
+False or True // returns true
+True or False // returns true
+
+[1] or [2] // returns [1]
+[] or {} // returns {}
+(1,) or {} // return (1,)
+```
+To reverse a boolean expression result, just use the `not` keyword.
 
 ### Notes
 
