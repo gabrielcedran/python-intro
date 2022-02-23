@@ -307,7 +307,10 @@ Looping over dictionaries is very similar to looping over lists. The only thing 
 
 Unpacking (destructuring) works when iterating over items, as it return a list of tuples (key / value). Enumerating also works with dictionaries.
 
+### External (third party) libraries
 
+To install external libraries it is necessary to use pip (python's package management system). Example of usage:
+`python -m pip install requests`
 
 
 ### Notes
