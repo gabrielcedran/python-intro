@@ -321,8 +321,17 @@ names = ["Gabriel", "Mary", "Bob", "Don"]
 # returns a tuple
 [("length", len(name)) for name in names]
 
-# returns a string with the list comprehension's result, that is a f string, joined by commas 
+# returns a string with the list comprehension's result (that is a f string) joined by commas 
 ", ".join([f"Name is {name}" for name in names])
+```
+
+#### Conditionals statements in list comprehensions
+
+Conditionals statements in list comprehensions make it way more powerful. To add a conditional just place the if statement after the elements definition (on the right side)
+
+```
+# it will only add the even squares to the final list 
+[num * num for num in range(10) if num % 2 == 0]
 ```
 
 ### External (third party) libraries
