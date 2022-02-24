@@ -307,6 +307,24 @@ Looping over dictionaries is very similar to looping over lists. The only thing 
 
 Unpacking (destructuring) works when iterating over items, as it return a list of tuples (key / value). Enumerating also works with dictionaries.
 
+### Loop with List comprehensions
+List comprehensions is a shortcut syntax that reduces repetition of commonly used operations on lists.
+The syntax is `[operation for variable in list]`
+
+```
+names = ["Gabriel", "Mary", "Bob", "Don"]
+[name.upper() for name in names]
+
+#returns squares of the number 1 to 5.
+[number * number for number in range(1, 6)]
+
+# returns a tuple
+[("length", len(name)) for name in names]
+
+# returns a string with the list comprehension's result, that is a f string, joined by commas 
+", ".join([f"Name is {name}" for name in names])
+```
+
 ### External (third party) libraries
 
 To install external libraries it is necessary to use pip (python's package management system). Example of usage:
