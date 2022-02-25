@@ -353,6 +353,43 @@ Dicts, sets and tuples also have comprehensions. The main difference is that ins
 
 ```
 
+### Comprehension efficiency with generators
+
+Comprehensions build the whole container in memory what could be inneficient for big data sets. 
+Python 3 created the concept of generators where values are generated when they are neceesary (kinda just in time), preventing the whole dataset to go into memory at once.
+
+To create a generator, just replace the comprehension type notation (eg square brackets for list) by regular brackets.
+
+```
+generator_comprehension = (num * num for num in range(100))
+for num in generator_comprehension:
+    print(num)
+
+set(num * num for num in range(100))
+```
+
+### Slicing lists
+
+```
+my_string = "Hello, World!" # strings are a list of characters!
+my_string[0] # returns "H"
+my_string[-1] # returns "!"
+my_string[1:3] # returns "el"
+my_string[1:] # returns from position 1 till the end
+my_string[:3] # returns from position 0 till position 3 (no inclusive)
+my_string[-3: -1] # returns "ld" - two characters before the last
+my_string[-3:] # returns "ld!" - the last three characters
+
+# for actual lists it works the same
+
+my_list = ["Dob", "Bob", "Mary"]
+new_list = my_list[:] # it gives a copy of the list
+new_list = my_list # points to the same list in memory
+
+my_list[::2] #the last parameter is the step. In this case it just returns every other one.
+my_list[::-1] # return the list backwards.
+```
+
 ### External (third party) libraries
 
 To install external libraries it is necessary to use pip (python's package management system). Example of usage:
