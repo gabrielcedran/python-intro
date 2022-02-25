@@ -334,6 +334,15 @@ Conditionals statements in list comprehensions make it way more powerful. To add
 [num * num for num in range(10) if num % 2 == 0]
 ```
 
+### List operations
+
+- sum is a built in method that sum up the values of any numbers `sum(list)`.
+- min and max methods are self explanatory
+- sorted to sort a list ascendingly and with the parameter `reverse=True` to sort descendingly (sorted in reverse)
+
+
+
+
 ### External (third party) libraries
 
 To install external libraries it is necessary to use pip (python's package management system). Example of usage:
