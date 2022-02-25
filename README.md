@@ -418,6 +418,38 @@ for name, score in zip(players, scores):
 To install external libraries it is necessary to use pip (python's package management system). Example of usage:
 `python -m pip install requests`
 
+## Object Oriented Programming in Python
+OOP paradigme (or programming model)
+
+### Classes
+To use classes in REPL keep the class files in the root directory of the project. Then import it using the command `from file import Class` and use it.
+
+```
+from cars import Car
+my_subaru = Car()
+my_subaru.start("Subaru")
+```
+
+To reload classes on REPL, follow the next steps:
+1. `import importlib`
+2. import the file(s) as a module (`import cars`) not as an specific import (from cars import Car)
+3. configure importlib to reload the module (`importlib.reload(cars)`)
+
+`self` keyword refers to an instance.
+`cls` means that is a class method.
+
+#### Initializer methods (or constructors)
+
+Initializer methods are defined by the dunder init (__init__) as takes at lest one mandatory argument: `self`.
+
+```
+def __init__(self, name):
+    print("test")
+    self.name = name
+```
+
+
+
 
 ### Notes
 
