@@ -7,6 +7,12 @@ class Car:
         self.name = name
         #print(f"Does runs? {runs}")
 
+    def __str__(self):
+        return f"My car the {self.name} currently {self.runs}"
+
+    def __repr__(self):
+        return f"Car({self.name})"
+
     def start(self):
         if self.runs:
             print(f"{self.name} car is started.")
