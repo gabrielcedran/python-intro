@@ -340,8 +340,18 @@ Conditionals statements in list comprehensions make it way more powerful. To add
 - min and max methods are self explanatory
 - sorted to sort a list ascendingly and with the parameter `reverse=True` to sort descendingly (sorted in reverse)
 
+### Comprehension on other containers datatypes
 
+Dicts, sets and tuples also have comprehensions. The main difference is that instead of using the list notation it is necessary their own notation. E.g for sets {... for var in element}, dicts {... for var in key: value} 
 
+```
+# set comprehension
+{num * num for num in range(6)}
+
+# dict comprehension
+{item[0]: item[1] * item[1] for item in {"one": 1, "two": 2, "three": 3}.items()}
+
+```
 
 ### External (third party) libraries
 
