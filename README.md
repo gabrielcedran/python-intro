@@ -390,6 +390,29 @@ my_list[::2] #the last parameter is the step. In this case it just returns every
 my_list[::-1] # return the list backwards.
 ```
 
+### Zip Function
+
+Zip function joins two lists into one list of tuples.
+```
+players = ["Mary", "Don", "Bob"]
+scores = [10, 8, 9]
+zip(players, scores) # returns a zip object, similar to a generator. The data structure is a list of tuples
+
+# looping over the zip
+for item in zip(players, scores):
+    print(item)
+
+# looping over the zip unpacking the tuple
+for name, score in zip(players, scores):
+    print(name, score)
+
+# using dict comprehension to transform the zip back into dict
+{item[0]: item[1] for item in  zip(players, scores)}
+
+# using dict comprehension with tuple unpacking
+{name: score for name, score in  zip(players, scores)}
+```
+
 ### External (third party) libraries
 
 To install external libraries it is necessary to use pip (python's package management system). Example of usage:
