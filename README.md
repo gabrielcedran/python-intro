@@ -448,7 +448,8 @@ def __init__(self, name):
     self.name = name
 ```
 
-
+#### class methods
+To create a class method you have to decorate the method with `@classmethod` declare the method as usual but receive a argument `cls` instead of `self`.
 
 
 ### Notes
