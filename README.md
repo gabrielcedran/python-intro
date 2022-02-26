@@ -618,7 +618,21 @@ To run the application set the env variable FLASK_APP to point to where the code
 For windows: `$env:FLASK_APP=hello_world.py; flask run`
 
 ### Enabling debugging mode and live reloading
+
 FLASK_APP=hello_world.py FLASK_ENV=development flask run
+
+### Templating
+
+Flask templating allows easy access to html variables without having to resort to anything fancy like javascript. To use templating follow the next steps:
+
+1. create a templates directory (flask will look for templates here)
+2. create a html file
+3. import render_template from flask
+4. return the html file using the render_template in the desired route
+
+
+
+
 
 ### Notes
 
