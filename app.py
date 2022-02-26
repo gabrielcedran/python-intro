@@ -23,3 +23,7 @@ def index():
         selected_languages=selected_languages, 
         available_languages=available_languages, 
         results=results)
+
+@app.errorhandler(GitHubApiError)
+def handle_api_error(error):
+    return render_template("error.html", message=error)
