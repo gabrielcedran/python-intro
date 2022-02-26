@@ -563,6 +563,14 @@ from pprint import pprint as pp
 pp({"a":"a","b":"b"})
 ```
 
+#### Using external packages
+
+PIP tool is used to install external packages. To browse through third party packages go to `pypi.org` and use the search bar (like maven repository) - there you can find more information about maintainers, statistics and installation instructions.
+
+Example: To install Requests package just run the command `python -m pip install requests`. It runs pip as a module from the virtual environment to avoid conflict of versions. To use, just import in a python file `import requests`.
+
+*Be careful with typo squatters!* Typing the wrong package name could mean installing packages with vunerability issues.
+
 
 ### Notes
 
