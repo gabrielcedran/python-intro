@@ -571,6 +571,26 @@ Example: To install Requests package just run the command `python -m pip install
 
 *Be careful with typo squatters!* Typing the wrong package name could mean installing packages with vunerability issues.
 
+### Automated tests
+
+Tests are a cornerstone in any program. Because of python's `batteries included` philosophy, everything that is needed to write unit tests are included in the standard library.
+- Unit tests are executed against the smallest testable unit of code - usually a function that does a single action or operation
+- Integration tests check if different units or modules of code work as expected together
+- Functional tests operate on units of functionality to make sure a function of the software is working as expected. It could involve several units of software or whole systems together.
+
+#### Unit tests
+
+There are few different frameworks for writing unit tests in python. There is even one that comes out of the box with the standard library named `unittest`. It is both a framework for writing tests and well as a test runner.
+
+To write unit tests with the standard library we need to write our tests as methods within a class and use a series of assertions. Tests are usually in a separate file and even module (tests instead of src).
+
+Test runners help you to discover tests in multiple directories. Without a test runner, there are two ways of executing a test:
+1. using the main method and calling `unittest.main()` from the file where the tests are
+2. executing the command `python -m -v unittest {test file without extension}` (-m means module, -v verbose)
+
+Other unit tests frameworks: nose and pytest.
+
+
 ### Notes
 
 - The default repository for third party libs is PyPI (Package Index)
