@@ -451,6 +451,63 @@ def __init__(self, name):
 #### class methods
 To create a class method you have to decorate the method with `@classmethod` declare the method as usual but receive a argument `cls` instead of `self`.
 
+### Exception(s) and exception handling
+
+Hierarchy: built-in exceptions extend from BaseException. Custom exceptions should not directly inherit from BaseException but from Exception instead. Exception is meant for all built-in and non built-in exceptions that are non-exiting exceptions.
+*Never catch BaseException.*
+
+Exception handling:
+It follows a very similar approach to any other language. A `try` block followed by a `except` (catch) one that declares which type of exception it is meant to capture. It is also possible to declare a variable to get the error and traceback:
+
+```
+not_a_number = 'a'
+try:
+    int(not_a_number)
+except ValueError:
+    print("Not a number!")
+
+# labelling the rror
+try:
+    int(not_a_number)
+except ValueError as e:
+    print("Not a number!", e)
+```
+
+To catch multiple errors at the same type provide a tuple with the errors in place of the single error - important to catch the more specific ones first and the more generic ones after.
+
+```
+my_map = {1:1}
+user_input = 3
+try:
+    my_map[user_input]
+except (ValueError, KeyError):
+    print("something unexpected")
+```
+
+It is possible to stack multiple excepts to have more fine grained handling.
+
+#### Custom Exceptions
+To create custom exceptions, simply extend from Exception:
+
+```
+class MyCustomException(Exception):
+    pass
+```
+
+And to use them, just use them as you would built-in exceptions with the raise keyword - `raise MyCustomException()`.
+
+```
+class IncorrectValueError(Exception):
+    def __init__(self, value):
+        message = f"Got a bad value: {value}"
+        super().__init__(message)
+
+# use:
+my_val = 999
+if my_val > 998:
+    raise IncorrectValueError(my_val)
+```
+
 
 ### Notes
 
