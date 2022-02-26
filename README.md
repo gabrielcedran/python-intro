@@ -630,7 +630,8 @@ Flask templating allows easy access to html variables without having to resort t
 3. import render_template from flask
 4. return the html file using the render_template in the desired route
 
-
+Flask supports a templating language called jinja that allows you to populate your html files with data from your flask app at render time.
+To do so, provide the variables as parameters to `render_template` following the html file name (or refer to the example in hello_world#test_template).
 
 
 

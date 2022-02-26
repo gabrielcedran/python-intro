@@ -1,3 +1,4 @@
+from unicodedata import name
 from flask import Flask, render_template
 app = Flask(__name__)
 
@@ -11,4 +12,6 @@ def hello_name(name):
 
 @app.route("/sample-with-template")
 def test_template():
-    return render_template("sample.html")
+    name = "DonBob"
+    greeting = "Hello"
+    return render_template("sample.html", greeting=greeting, name=name)

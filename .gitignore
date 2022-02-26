@@ -1,1 +1,4 @@
 __pycache__
+
+env/bin/
+env/lib/
