@@ -571,7 +571,6 @@ Example: To install Requests package just run the command `python -m pip install
 
 *Be careful with typo squatters!* Typing the wrong package name could mean installing packages with vunerability issues.
 
-
 ### Notes
 
 - The default repository for third party libs is PyPI (Package Index)
