@@ -508,6 +508,36 @@ if my_val > 998:
     raise IncorrectValueError(my_val)
 ```
 
+### Libraries and Modules
+
+#### Standard library
+
+Python comes with a comprehensive library set out of the box and is immediately available - python has been designed to be `bateries included`. Some of the standard libraries are: datetime, random, sys, os, math, json, etc
+
+#### Modules and imports
+
+Python 3 does not required a dunder `__init__.py` to create a new module.
+
+To create a new module, just create a file with the wanted name and `.py` extension and then import it in another file. Example:
+
+```
+# module: my_math_functions/__init__.py it contains a `add_numbers` function
+
+import my_math_functions
+...
+my_math_functions.add_numbers(1, 2)
+
+# or 
+from my_math_functions import add_numbers
+...
+add_numbers(1, 3)
+
+# or - but don't do it
+from my_math_functions import *
+...
+add_numbers
+```
+
 
 ### Notes
 
