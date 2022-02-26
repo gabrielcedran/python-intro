@@ -591,6 +591,35 @@ Test runners help you to discover tests in multiple directories. Without a test 
 Other unit tests frameworks: nose and pytest.
 
 
+## Flask
+Flask is a lightweight web framework (can even be class as a microframework) and is not very opinionated as other frameworks like django. Django on the other hand is a fully-featured and high-level framework that focus on automating as much as possible. It is also very opinionated of how things should be built. Pyramid is yet another relatively famous web framework.
+
+#### Setup
+
+To install flask, run the command `python -m pop install flak` in the virtual environment.
+
+### Handling requests
+
+Flask uses decorators in order to determine routers. These decorators are places above functions (refer to `hello_world.py`). Example:
+
+```
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+    return "Hello world!"
+```
+
+To run the application set the env variable FLASK_APP to point to where the code is and then the commands flask run.
+
+`FLASK_APP=hello_world.py flask run`
+
+For windows: `$env:FLASK_APP=hello_world.py; flask run`
+
+### Enabling debugging mode and live reloading
+FLASK_APP=hello_world.py FLASK_ENV=development flask run
+
 ### Notes
 
 - The default repository for third party libs is PyPI (Package Index)
