@@ -516,9 +516,9 @@ Python comes with a comprehensive library set out of the box and is immediately 
 
 #### Modules and imports
 
-Python 3 does not required a dunder `__init__.py` to create a new module.
+Python 3 does not required a dunder `__init__.py` to create a new module, but it can still be useful.
 
-To create a new module, just create a file with the wanted name and `.py` extension and then import it in another file. Example:
+To create a new module, just create a folder and add a `__init__.py` file in it. Python will automatically recognize it as a module. Then import it in another file. Example:
 
 ```
 # module: my_math_functions/__init__.py it contains a `add_numbers` function
@@ -536,6 +536,31 @@ add_numbers(1, 3)
 from my_math_functions import *
 ...
 add_numbers
+```
+
+In case of multiple subfolders, just declare the path accordingly on the import declarations from the root directory (in case there is no `__init__.py` file, you have to include the file name as well):
+
+```
+import another_maths_functions.with_sub_folder.my_maths
+...
+another_maths_functions.with_sub_folder.my_maths.sub(1,2)
+
+# or only import one function
+from another_maths_functions.with_sub_folder.my_maths import sub
+...
+sub(30,3)
+
+# or
+from another_maths_functions.with_sub_folder import my_maths
+...
+my_maths.sub(1,2)
+```
+
+It is possible to label imports to make them easier to identify:
+
+```
+from pprint import pprint as pp
+pp({"a":"a","b":"b"})
 ```
 
 
